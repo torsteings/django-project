@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'jio(8$w9p8s2nckt%a1r3pa^ljwulf+d5bz7i+^9t$aaq!p4x*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -131,3 +131,7 @@ STATIC_URL = '/static/'
 
 import dj_database_url
 DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
